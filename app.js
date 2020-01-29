@@ -14,8 +14,8 @@ app.get('/api/product',(req,res)=>{
     Product.find({}).then((data)=>{
         let products = []
         data.forEach((item) =>  {
-            console.log(item)
             products.push({
+                id: item._id,
                 name: item.name,
                 price: item.price
             })
