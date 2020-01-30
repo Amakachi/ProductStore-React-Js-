@@ -2,7 +2,7 @@ const multer = require('multer'); // Used to upload the image to the server side
 
 const fileFilter = function(req,file,cb){
     // filter files
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'){
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg'){
         cb(null,true);
     }else{
         cb(null,false);
