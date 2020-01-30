@@ -1,8 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID } = require('mongodb');
-const _ = require('lodash');
-const fs = require('fs');
 
 const { mongoose } = require('./db/mongoose');
 const { Product } = require('./entities/product-detail');
@@ -12,6 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}))
 app.use('/uploads',express.static('uploads'))
 
 app.get('/api/product',(req,res)=>{
@@ -25,13 +24,14 @@ app.get('/api/product',(req,res)=>{
             });
     })
 
-app.post('/api/product',upload.single('productImage'),(req,res)=>{
+app.post('/api/product',upload.single('image'),(req,res)=>{
+    console.log(req.file.path);
     let product = new Product({
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
         category: req.body.category,
-        productImage: req.file.path,
+        image: req.file.path,
         color: req.body.color
     });
     
@@ -45,13 +45,15 @@ app.post('/api/product',upload.single('productImage'),(req,res)=>{
 app.get('/api/product/:id',(req,res)=>{
     let id = req.params.id;
     if (!ObjectID.isValid(id)) return res.status(404).json({msg: "Invalid id"});
-    Product.findById(id).then((data)=>{
-        let product =_.pick(data,["_id","name","description","price","category","image","color"]);
-        res.json(product);
-    }).catch((err)=>{
-        res.status(400).json({error: err});
-    })
-});
+    Product.findById(id)
+                .select("_id name description price category image color")
+                .exec()
+                .then((data)=>{
+                    res.json(data);
+                }).catch((err)=>{
+                    res.status(400).json({error: err});
+                });
+            });
 
 
 app.listen(port,()=>{

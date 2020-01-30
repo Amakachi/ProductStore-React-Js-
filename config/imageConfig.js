@@ -11,10 +11,10 @@ const fileFilter = function(req,file,cb){
 
 const storage = multer.diskStorage({
     destination: function(req,file,cb){
-        cb(null,'./uploads/')
+        cb(null,'./uploads')
     },
     filename: function(req,file,cb){
-        cb(new Error('Image should be jpeg or png'),new Date().toISOString+file.originalname);
+        cb(null,file.originalname);
     }
 })
 
