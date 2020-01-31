@@ -44,10 +44,10 @@ export default class  extends Component {
                        Back to product
                    </ButtonContainer>
                    </Link> 
-                   <ButtonContainer cart disabled={inCart ? true : false} onClick={() => {value.addToCart(_id); }}>
+                   {/*<ButtonContainer cart disabled={inCart ? true : false} onClick={() => {value.addToCart(_id); }}>*/}
 
-                       {inCart? "inCart" : "add to Cart"}
-                   </ButtonContainer>
+                   {/*    {inCart? "inCart" : "add to Cart"}*/}
+                   {/*</ButtonContainer>*/}
                 </div>
                             </div>
                         </div>
