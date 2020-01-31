@@ -37,7 +37,7 @@ class ProductProvider extends Component {
     // this.setState(() => {
     //   return {detailProduct:product}
     // })
-    axios.get('http://localhost:4000/api/collections/'+id)
+    axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/collections/${id}`)
       .then(function (response) {
         let collection = response.data
         this.setState(() => {

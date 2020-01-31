@@ -40,7 +40,7 @@ export default class AddProduct extends Component {
           data.append('color', this.state.color);
           data.append('price', this.state.price);
          
-          axios.post('http://localhost:4000/api/collections', data)
+          axios.post(`${process.env.REACT_APP_BACKEND_BASE_URL}/collections`, data)
           .then(function (response) {
             document.location = "/";
           }.bind(this)).catch(function(error) {

@@ -15,7 +15,7 @@ export default class ProductList extends Component {
   }
 
   _getAllCollections = () => {
-    axios.get('http://localhost:4000/api/collections')
+    axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/collections`)
     .then(function (response) {
       let collections = response.data
       console.log(collections)
