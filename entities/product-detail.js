@@ -1,9 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://admin:daniella1@ds149998.mlab.com:49998/heroku_hxfjqrf6', {useNewUrlParser: true});
-mongoose.Promise = global.Promise;
-
 const productSchema =new Schema({
     name: { type: String, required: true},
     description: { type: String, required: true},
