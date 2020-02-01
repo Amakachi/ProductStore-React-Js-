@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 export default class Product extends Component {
   render() {
-    const { _id, price, image, name, description, category, color, inCart } = this.props.product;
+    const { _id, price, image, name, description, category, color } = this.props.product;
     const photo = `${process.env.REACT_APP_BACKEND_UPLOAD_DIRECTORY}/${image}`;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3 ">
@@ -58,6 +58,8 @@ Product.propTypes = {
     _id: PropTypes.string,
     img: PropTypes.string,
     name: PropTypes.string,
+    category: PropTypes.string,
+    description: PropTypes.string,
     price: PropTypes.number,
     inCart: PropTypes.bool
   }).isRequired

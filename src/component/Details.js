@@ -9,7 +9,7 @@ export default class  extends Component {
             <ProductConsumer>
                 {(value) => {
                 console.log(value.detailProduct)
-                const {_id, name, image, category, company, img, info, price, description, title, color, inCart} = value.detailProduct;
+                const {_id, name, image, category,  price, description, title, color} = value.detailProduct;
                 const photo = `${process.env.REACT_APP_BACKEND_UPLOAD_DIRECTORY}/${image}`
                 return (
                     <div className="container py-5">
