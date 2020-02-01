@@ -3,6 +3,14 @@
 =======
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### `Heroku`
+
+This application is hosted on Heroku with this url: https://productstoreapp-frontend.herokuapp.com/
+
+### `Backend`
+
+The  backend application for this can be found on https://github.com/Amakachi/ProductStoreNodeJs
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -70,3 +78,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 >>>>>>> 3bd2602d30b16d3cc6987d1ff09a686d79e3160e
+
+
