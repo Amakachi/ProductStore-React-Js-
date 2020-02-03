@@ -10,13 +10,13 @@ export default class AddProduct extends Component {
             id: null,
             title: null ,
             img: null,
-            price: null,
-            company: null,
-            info:null,
+            price: 10,
+            company: "GOOGLE",
+            info:"Lorem ipsum dolor amet offal butcher quinoa sustainable gastropub, echo park actually green juice sriracha paleo. Brooklyn sriracha semiotics, DIY coloring book mixtape craft beer sartorial hella blue bottle. Tote bag wolf authentic try-hard put a bird on it mumblecore. Unicorn lumbersexual master cleanse blog hella VHS, vaporware sartorial church-key cardigan single-origin coffee lo-fi organic asymmetrical. Taxidermy semiotics celiac stumptown scenester normcore, ethical helvetica photo booth gentrify.",
             inCart: false,
             count: 0,
             total: 0,
-            category: null
+            category: 'Shoe'
     }
 
     _fileChangedHandler = event => {
@@ -58,33 +58,28 @@ export default class AddProduct extends Component {
           <div className="container">
             <div className="card">
               <div className="row">
-                <div className="col-md-6">
-                  <h3 className="text-capitalize font-weight-bold"> Image Preview and Upload Component</h3>
+               <div className="col-md-6">
+                  <h3> Image Preview and Upload Component</h3>
                   <div id="mainApp"></div>
-                  <div className="centerText">
-                    <span>Checkout associated </span>
-                    {/* <ImageUpload /> */}
-                    <input
-                  type="file"
-                  className="form-control fileInput"
-                  name="photo"
-                  onChange={this._fileChangedHandler}
-                />
-                {/* <img 
-                src={this.state.uploadedFile}
-                className="uploaded-photo"
-                alt={this.state.uploadedFile}
-              /> */}
-                <div className="imgPreview">
-                     <img 
-                src={this.state.uploadedFile}
-                className="uploaded-photo"
-                alt={this.state.uploadedFile}
-                width={450}
-                height={250}
-              />
-                </div>
-
+                  <div className="form-group-row ">
+                    <div className="col regform">
+                      <span>Checkout associated</span>
+                      <input
+                        type="file"
+                        className="form-control"
+                        id="exampleInputName"
+                        placeholder="Name"
+                        name="photo"
+                        onChange={this._fileChangedHandler}
+                      />
+                      <img 
+                        src={this.state.uploadedFile}
+                        class="img-fluid"
+                        alt={this.state.uploadedFile}
+                        height={250}
+                        width={`auto`}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -213,7 +208,6 @@ export default class AddProduct extends Component {
 const ImageWrapper = styled.div`
   h3 {
     margin-left: 15px;
-    font-family: 'Oswald', sans-serif;
   }
 
   .centerText {
