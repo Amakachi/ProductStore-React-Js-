@@ -23,7 +23,7 @@ export default class  extends Component {
                         {/* Product Info */}
                         <div className="row">
                             <div className="col-10 mx-auto col-md-6 my-3 ">
-                                <img src={photo} className="img-fluid" alt="product "></img>
+                                <img src={image} className="img-fluid" alt="product "></img>
                             </div>
                             {/* Product Text */}
                             <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
