@@ -93,8 +93,9 @@ const ImageStyle = styled.div`
     height: 100%;
   }
   .previewText {
-    width: 100%;
+    width: 50vw;
     margin-top: 20px;
+    
   }
   .submitButton {
     padding: 12px;
